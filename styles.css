@@ -1,0 +1,14 @@
+/* These CSS rules apply to the <html>, <body>, and <div id="app"> HTML elements in index.html */
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* Continue building out the CSS styling for your Twiddler app below! We got you started by
+providing a space for you to apply styles to your app's outermost HTML element - the #app itself. */
+
+#app {
+  background-color: green;
+  color: yellow;
+}
