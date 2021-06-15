@@ -1,0 +1,10 @@
+{
+  "defaultCommandTimeout": 100,
+  "fixturesFolder": false,
+  "integrationFolder": "spec",
+  "testFiles": "**/*.js",
+  "pluginsFile": false,
+  "supportFile": false,
+  "screenshotOnRunFailure": false,
+  "video": true
+}
