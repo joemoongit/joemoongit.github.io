@@ -12,26 +12,26 @@ $(document).ready(function() {
   var $updateButton = $('<button id="update-feed"></button>');
   $updateButton.text('Update Feed');
   $updateButton.appendTo($app);
+  $updateButton.on('click', function(event) {
+    populateTweets();
+  });
 
   var $tweets = $('<div class="tweets"></div>');
   $tweets.appendTo($app);
 
-  $updateButton.on('click', function(event) {
-    var $tweetCount = $('.tweet').length;
-    for (var i = $tweetCount; i < streams.home.length; i++) {
-      var tweet = streams.home[i];
-      var $tweet = $('<div class="tweet"></div>');
-      $tweet.text('@' + tweet.user + ': ' + tweet.message);
-      $tweet.prependTo($tweets);
-    }
-  });
-
-  var index = streams.home.length - 1;
-  while (index >= 0) {
+  var state = 0;
+  var addTweets = function(index) {
     var tweet = streams.home[index];
     var $tweet = $('<div class="tweet"></div>');
     $tweet.text('@' + tweet.user + ': ' + tweet.message);
-    $tweet.appendTo($tweets);
-    index -= 1;
-  }
+    $tweet.prependTo($tweets);
+    state += 1
+  };
+  var populateTweets = function() {
+    for (var i = state; i < streams.home.length; i++) {
+      addTweets(i);
+    }
+  };
+
+  populateTweets();
 });
