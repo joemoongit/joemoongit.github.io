@@ -107,6 +107,8 @@ $(document).ready(function() {
       var $component = elementGenerator(components[key]);
       if (key === 'user') {
         $component.text('@' + tweet[key] + ': ')
+      } else if (key === 'created_at') {
+        $component.text(jQuery.timeago(tweet[key]));
       } else {
         $component.text(tweet[key]);
       }
