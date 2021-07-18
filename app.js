@@ -13,19 +13,19 @@ $(document).ready(function() {
   $updateButton.text('Update Feed');
   $updateButton.appendTo($app);
   $updateButton.on('click', function(event) {
-   // $tweets.removeAttr(event.target.innerHTML);
-    populateTweets();
+ //   $feed.removeAttr(event.target.innerHTML);
+    renderFeed();
   });
 
-  var $tweets = $('<div id="feed"></div>');
-  $tweets.appendTo($app);
+  var $feed = $('<div id="feed"></div>');
+  $feed.appendTo($app);
 
   var elementGenerator = function(object) {
     var res = '<' + object.type;
     for (var key in object.attributes) {
       if (typeof(object.attributes[key]) === 'string') {
         res += ' ' + key + '=\"' + object.attributes[key] + '\"';
-      } else if (typeof(object.attributes[key]) === 'object') {
+      } else if (Array.isArray(object.attributes[key])) {
         res += ' ' + key + '=\"' + (object.attributes[key]).join(' ') + '\"';
       } else {
         res += ' ' + key + '=\"' + object.attributes[key] + '\"';
@@ -103,39 +103,39 @@ $(document).ready(function() {
 
   var createTweet = function(tweet, $tweet) {
     var components = elements(tweet);
-    for (var key in tweet) {
-      var $key = elementGenerator(components[key]);
+    for (var key in components) {
+      var $component = elementGenerator(components[key]);
       if (key === 'user') {
-        $key.text('@' + tweet[key] + ': ')
+        $component.text('@' + tweet[key] + ': ')
       } else {
-        $key.text(tweet[key]);
+        $component.text(tweet[key]);
       }
-      $key.appendTo($tweet);
+      $component.appendTo($tweet);
     }
 
-    // footer
-    for (var key in footer) {
-      var $key = elementGenerator(footer[key]);
-      $key.appendTo($tweet);
+    for (var icon in footer) {
+      var $component = elementGenerator(footer[icon]);
+      $component.appendTo($tweet);
     }
+
+    return $tweet;
   };
 
-  var state = 0;
   var addTweet = function(index) {
     var tweet = streams.home[index];
     var $tweet = $('<div class="tweet"></div>');
 
-    createTweet(tweet, $tweet);
+    $tweet = createTweet(tweet, $tweet);
 
-    $tweet.prependTo($tweets);
-    state += 1
+    $tweet.prependTo($feed);
   };
 
-  var populateTweets = function() {
-    for (var i = state; i < streams.home.length; i++) {
+  var renderFeed = function() {
+    $feed.empty();
+    for (var i = 0; i < streams.home.length; i++) {
       addTweet(i);
     }
   };
 
-  populateTweets();
+  renderFeed();
 });
