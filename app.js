@@ -16,7 +16,7 @@ $(document).ready(function() {
     populateTweets();
   });
 
-  var $tweets = $('<div class="tweets"></div>');
+  var $tweets = $('<div id="feed"></div>');
   $tweets.appendTo($app);
 
   var state = 0;
