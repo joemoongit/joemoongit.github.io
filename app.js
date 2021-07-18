@@ -13,6 +13,7 @@ $(document).ready(function() {
   $updateButton.text('Update Feed');
   $updateButton.appendTo($app);
   $updateButton.on('click', function(event) {
+   // $tweets.removeAttr(event.target.innerHTML);
     populateTweets();
   });
 
@@ -23,10 +24,20 @@ $(document).ready(function() {
   var addTweets = function(index) {
     var tweet = streams.home[index];
     var $tweet = $('<div class="tweet"></div>');
-    $tweet.text('@' + tweet.user + ': ' + tweet.message);
+
+    var $msg = $('<p class="message"></p>');
+    $msg.text(tweet.message);
+
+    var $name = $('<h6 class="username"></h6>');
+    $name.text('@' + tweet.user + ':')
+
+    $name.appendTo($tweet);
+    $msg.appendTo($tweet);
+
     $tweet.prependTo($tweets);
     state += 1
   };
+
   var populateTweets = function() {
     for (var i = state; i < streams.home.length; i++) {
       addTweets(i);
