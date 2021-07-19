@@ -23,9 +23,7 @@ $(document).ready(function() {
   var elementGenerator = function(object) {
     var res = '<' + object.type;
     for (var key in object.attributes) {
-      if (typeof(object.attributes[key]) === 'string') {
-        res += ' ' + key + '=\"' + object.attributes[key] + '\"';
-      } else if (Array.isArray(object.attributes[key])) {
+      if (Array.isArray(object.attributes[key])) {
         res += ' ' + key + '=\"' + (object.attributes[key]).join(' ') + '\"';
       } else {
         res += ' ' + key + '=\"' + object.attributes[key] + '\"';
@@ -47,7 +45,11 @@ $(document).ready(function() {
       res += '</' + object.type + '>';
     }
     for (var key in object.attributes) {
-      $res.attr(key, object.attributes[key]);
+      if (Array.isArray(object.attributes[key])) {
+        $res.attr(key, (object.attributes[key]).join(' '));
+      } else {
+        $res.attr(key, object.attributes[key]);
+      }
     }
     return $res;
   };
