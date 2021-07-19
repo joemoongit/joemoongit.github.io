@@ -14,6 +14,9 @@ $(document).ready(function() {
   $updateButton.appendTo($app);
   $updateButton.on('click', function(event) {
  //   $feed.removeAttr(event.target.innerHTML);
+    if ($updateButton.text() === 'Back') {
+      $updateButton.text('Update Feed');
+    }
     renderFeed();
   });
 
@@ -54,7 +57,7 @@ $(document).ready(function() {
     return $res;
   };
 
-  var elements = function(tweet){
+  var elements = function(t){
     return {
       'user': {
         'type': 'div',
@@ -78,7 +81,7 @@ $(document).ready(function() {
         'type': 'img',
         'attributes': {
           'class': 'profile-photo',
-          'src': tweet.profilePhotoURL
+          'src': t.profilePhotoURL
         }
       }
     };
@@ -116,7 +119,11 @@ $(document).ready(function() {
     for (var key in components) {
       var $component = elementGenerator(components[key]);
       if (key === 'user') {
-        $component.text('@' + tweet[key] + ': ')
+        var user = tweet[key];
+        $component.text('@' + user);
+        $component.on('click', function() {
+          renderFeed(user);
+        });
       } else if (key === 'created_at') {
         $component.text(jQuery.timeago(tweet[key]));
       } else {
@@ -133,8 +140,8 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  var addTweet = function(index) {
-    var tweet = streams.home[index];
+  var addTweet = function(tweet) {
+    var tweet = tweet;
     var $tweet = $('<div class="tweet"></div>');
 
     $tweet = createTweet(tweet, $tweet);
@@ -142,10 +149,19 @@ $(document).ready(function() {
     $tweet.prependTo($feed);
   };
 
-  var renderFeed = function() {
+  var renderFeed = function(user) {
     $feed.empty();
-    for (var i = 0; i < streams.home.length; i++) {
-      addTweet(i);
+    if (user === undefined) {
+      for (var i = 0; i < streams.home.length; i++) {
+        addTweet(streams.home[i]);
+      }
+    } else {
+      $updateButton.text('Back');
+      for (var i = 0; i < streams.home.length; i++) {
+        if (streams.home[i]['user'] === user) {
+          addTweet(streams.home[i]);
+        }
+      }
     }
   };
 
