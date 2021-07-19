@@ -13,6 +13,10 @@ providing a space for you to apply styles to your app's outermost HTML element -
   color: yellow;
 }
 
+/* #app h1 {
+  font-family: 'Open Sans', sans-serif;
+} */
+
 .icon:hover {
   color: blue;
 }
