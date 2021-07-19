@@ -40,6 +40,18 @@ $(document).ready(function() {
     return $(res);
   };
 
+  var elementGeneratorUsingJquery = function(object) {
+    var res = '<' + object.type + '>';
+    var $res = $(res);
+    if (object.type !== 'img') {
+      res += '</' + object.type + '>';
+    }
+    for (var key in object.attributes) {
+      $res.attr(key, object.attributes[key]);
+    }
+    return $res;
+  };
+
   var elements = function(tweet){
     return {
       'user': {
