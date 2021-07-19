@@ -125,6 +125,11 @@ $(document).ready(function() {
 
     for (var icon in footer) {
       var $component = elementGenerator(footer[icon]);
+      $component.hover(function() {
+        $(this).css('color', 'blue');
+      }, function() {
+        $(this).css('color', 'yellow');
+      });
       $component.appendTo($tweet);
     }
 
