@@ -72,31 +72,27 @@ $(document).ready(function() {
 
   var footer = {
     'icon1': {
-      'type': 'img',
+      'type': 'i',
       'attributes': {
-        'class': ['icon', 'comment'],
-        'src': './assets/icons/placeholder.png'
+        'class': ['icon', 'comment', 'far', 'fa-comments']
       }
     },
     'icon2': {
-      'type': 'img',
+      'type': 'i',
       'attributes': {
-        'class': ['icon', 'retweet'],
-        'src': './assets/icons/placeholder.png'
+        'class': ['icon', 'retweet', 'fas', 'fa-retweet']
       }
     },
     'icon3': {
-      'type': 'img',
+      'type': 'i',
       'attributes': {
-        'class': ['icon', 'like'],
-        'src': './assets/icons/placeholder.png'
+        'class': ['icon', 'like', 'far', 'fa-thumbs-up']
       }
     },
     'icon4': {
-      'type': 'img',
+      'type': 'i',
       'attributes': {
-        'class': ['icon', 'share'],
-        'src': './assets/icons/placeholder.png'
+        'class': ['icon', 'share', 'far', 'fa-share-square']
       }
     }
   };
