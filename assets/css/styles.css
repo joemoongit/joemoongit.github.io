@@ -9,7 +9,7 @@ html, body, #app {
 providing a space for you to apply styles to your app's outermost HTML element - the #app itself. */
 
 #app {
-  background-image: url("./assets/img/clouds.jpg");
+  background-image: url("../img/clouds.jpg");
   background-size: cover;
   overflow-y: scroll;
   color: yellow;
@@ -72,6 +72,11 @@ providing a space for you to apply styles to your app's outermost HTML element -
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
+}
+
+#homer {
+  border-radius: 50%;
+  width: 4em;
 }
 
 .profile-photo {
