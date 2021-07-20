@@ -57,7 +57,28 @@ $(document).ready(function() {
     return $res;
   };
 
-  var elements = function(t){
+  var flexElements = {
+    'header': {
+      'type': 'div',
+      'attributes': {
+        'class': 'tweet-header'
+      }
+    },
+    'section' : {
+      'type': 'div',
+      'attributes': {
+        'class': 'tweet-section'
+      }
+    },
+    'footer' : {
+      'type': 'div',
+      'attributes': {
+        'class': 'tweet-footer'
+      }
+    },
+  };
+
+  var elements = function(tweet){
     return {
       'user': {
         'type': 'div',
@@ -81,7 +102,7 @@ $(document).ready(function() {
         'type': 'img',
         'attributes': {
           'class': 'profile-photo',
-          'src': t.profilePhotoURL
+          'src': tweet.profilePhotoURL
         }
       }
     };
@@ -116,6 +137,11 @@ $(document).ready(function() {
 
   var createTweet = function(tweet, $tweet) {
     var components = elements(tweet);
+
+    var $header = elementGenerator(flexElements.header);
+    var $section = elementGenerator(flexElements.section);
+    var $footer = elementGenerator(flexElements.footer);
+
     for (var key in components) {
       var $component = elementGenerator(components[key]);
       if (key === 'user') {
@@ -124,18 +150,29 @@ $(document).ready(function() {
         $component.on('click', function() {
           renderFeed(user);
         });
+        $component.appendTo($header)
+      } else if (key === 'message') {
+        $component.text(tweet[key]);
+        $component.appendTo($section)
       } else if (key === 'created_at') {
         $component.text(jQuery.timeago(tweet[key]));
+        $component.appendTo($footer)
+      } else if (key === 'profilePhotoURL') {
+        $component.appendTo($header);
       } else {
         $component.text(tweet[key]);
       }
-      $component.appendTo($tweet);
+      // $component.appendTo($tweet);
     }
 
     for (var icon in footer) {
       var $component = elementGenerator(footer[icon]);
-      $component.appendTo($tweet);
+      $component.appendTo($footer);
     }
+
+    $header.appendTo($tweet);
+    $section.appendTo($tweet);
+    $footer.appendTo($tweet);
 
     return $tweet;
   };

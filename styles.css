@@ -9,14 +9,119 @@ html, body, #app {
 providing a space for you to apply styles to your app's outermost HTML element - the #app itself. */
 
 #app {
-  background-color: green;
+  /* background-color: cyan; */
+  background-image: url("./assets/img/clouds.jpg");
+  background-size: cover;
+  overflow-y: scroll;
   color: yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
 }
 
-/* #app h1 {
-  font-family: 'Open Sans', sans-serif;
-} */
+#title {
+  margin: 0;
+  text-align: center;
+  color: yellow;
+  font-size: 6em;
+  font-family: 'Homer Simpson Revised', sans-serif;
+}
+
+#update-feed {
+  color: black;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Homer Simpson Revised', sans-serif;
+  font-size: 1.6em;
+  padding: 0.4em;
+  margin: 0 auto;
+  background-color: white;
+  border: 0.08em solid gray;
+  border-radius: 10em;
+}
+
+#update-feed:hover {
+  background-color: gray;
+  color: white;
+}
+
+#feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-style: hidden;
+  border-color: black;
+  width: 50%;
+  background-color: rgba(211, 211, 211, 0.8);
+  color: midnightblue;
+  flex-wrap: wrap;
+  /* row-gap: 1%;
+  column-gap: 1%; */
+  padding: 1%;
+  margin: 1%;
+  border-radius: 1em;
+}
+
+.tweet-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  width: 4em;
+}
+
+.username {
+  padding-left: 1%;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.tweet-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+}
+
+.message {
+  font-size: 2em;
+}
+
+.tweet-footer {
+  display: flex;
+}
+
+.timestamp {
+
+}
+
+.icon {
+  margin-left: auto;
+}
 
 .icon:hover {
   color: blue;
+}
+
+.comment:hover {
+  color: magenta;
+}
+
+.retweet:hover {
+  color: orange;
+}
+
+.like:hover {
+  color: black;
 }
