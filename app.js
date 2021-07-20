@@ -135,96 +135,6 @@ $(document).ready(function() {
     }
   };
 
-  var returnHomer = function() {
-    var $homer = $('<div id="homer"></div>');
-
-    var $head = $('<div class="head"></div>');
-    $head.appendTo($homer);
-
-    var $hair1 = $('<div class="hair1"></div>');
-    var $hair2 = $('<div class="hair2"></div>');
-    var $hair3 = $('<div class="body head-top"></div>');
-    var $hair4 = $('<div class="no-border body head-main"></div>');
-
-    $hair1.appendTo($head);
-    $hair2.appendTo($head);
-    $hair3.appendTo($head);
-    $hair4.appendTo($head);
-
-    var $hair5 = $('<div class="no-border m1"></div>');
-    var $hair6 = $('<div class="no-border m2"></div>');
-    var $hair7 = $('<div class="no-border m3"></div>');
-    var $hair8 = $('<div class="no-border m4"></div>');
-
-    $hair5.appendTo($head);
-    $hair6.appendTo($head);
-    $hair7.appendTo($head);
-    $hair8.appendTo($head);
-
-    var $neck1 = $('<div class="no-border neck1"></div>');
-    var $neck2 = $('<div class="body neck2"></div>');
-
-    $neck1.appendTo($head);
-    $neck2.appendTo($head);
-
-
-    var $ear = $('<div class="body ear"></div>');
-    var $ear1 = $('<div class="no-border inner1"></div>');
-    var $ear2 = $('<div class="no-border inner2"></div>');
-    var $ear3 = $('<div class="no-border body clip"></div>');
-
-    $ear1.appendTo($ear);
-    $ear2.appendTo($ear);
-    $ear3.appendTo($ear);
-    $ear.appendTo($head);
-
-    var $mouth = $('<div class="mouth"></div>');
-    var $mouth1 = $('<div class="mouth5"></div>');
-    var $mouth2 = $('<div class="mouth2"></div>');
-    var $mouth3 = $('<div class="mouth1"></div>');
-    var $mouth4 = $('<div class="mouth7"></div>');
-    var $mouth5 = $('<div class="no-border mouth3"></div>');
-    var $mouth6 = $('<div class="no-border mouth4"></div>');
-    var $mouth7 = $('<div class="no-border mouth6"></div>');
-    var $mouth8 = $('<div class="no-border mouth8"></div>');
-
-    $mouth1.appendTo($mouth);
-    $mouth2.appendTo($mouth);
-    $mouth3.appendTo($mouth);
-    $mouth4.appendTo($mouth);
-    $mouth5.appendTo($mouth);
-    $mouth6.appendTo($mouth);
-    $mouth7.appendTo($mouth);
-    $mouth8.appendTo($mouth);
-    $mouth.appendTo($head);
-
-    var $rightEye = $('<div class="right-eye"></div>');
-    var $rightEye1 = $('<div class="no-border right-eye-pupil"></div>');
-    var $rightEye2 = $('<div class="no-border body eyelid-top"></div>');
-    var $rightEye3 = $('<div class="no-border body eyelid-bottom"></div>');
-    $rightEye1.appendTo($rightEye);
-    $rightEye2.appendTo($rightEye);
-    $rightEye3.appendTo($rightEye);
-    $rightEye.appendTo($head);
-
-    var $nose1 = $('<div class="body nose"></div>');
-    var $nose2 = $('<div class="body nose-tip"></div>');
-    $nose1.appendTo($head);
-    $nose2.appendTo($head);
-
-
-    var $leftEye = $('<div class="left-eye"></div>');
-    var $leftEye1 = $('<div class="no-border left-eye-pupil"></div>');
-    var $leftEye2 = $('<div class="no-border body eyelid-top"></div>');
-    var $leftEye3 = $('<div class="no-border body eyelid-bottom"></div>');
-    $leftEye1.appendTo($leftEye);
-    $leftEye2.appendTo($leftEye);
-    $leftEye3.appendTo($leftEye);
-    $leftEye.appendTo($head);
-
-    return $homer;
-  };
-
   var homer = {
     'head' : {
       'hair1': 'hair1',
@@ -414,7 +324,6 @@ $(document).ready(function() {
     }
   };
 
-
   var elementGenerator2 = function(element, attributes) {
     var attr = '';
     for (var key in attributes) {
@@ -431,7 +340,7 @@ $(document).ready(function() {
     var $part;
     for (var key in character.head) {
       if (typeof(character.head[key]) === 'object') {
-        if (key === 'ear') {
+        if (name !=='maggie' && key === 'ear') {
           $part = elementGenerator2('div', {'class': `body ${key}`})
         } else if (name === 'maggie' && key === 'ear') {
           $part = elementGenerator2('div', {'class': `circle body ${key}`})
