@@ -9,7 +9,6 @@ html, body, #app {
 providing a space for you to apply styles to your app's outermost HTML element - the #app itself. */
 
 #app {
-  /* background-color: cyan; */
   background-image: url("./assets/img/clouds.jpg");
   background-size: cover;
   overflow-y: scroll;
@@ -63,8 +62,6 @@ providing a space for you to apply styles to your app's outermost HTML element -
   background-color: rgba(211, 211, 211, 0.8);
   color: midnightblue;
   flex-wrap: wrap;
-  /* row-gap: 1%;
-  column-gap: 1%; */
   padding: 1%;
   margin: 1%;
   border-radius: 1em;
@@ -84,8 +81,6 @@ providing a space for you to apply styles to your app's outermost HTML element -
 
 .username {
   padding-left: 1%;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .tweet-section {
@@ -111,7 +106,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
 }
 
 .icon:hover {
-  color: blue;
+  color: turquoise;
 }
 
 .comment:hover {
@@ -123,5 +118,5 @@ providing a space for you to apply styles to your app's outermost HTML element -
 }
 
 .like:hover {
-  color: black;
+  color: yellow;
 }
