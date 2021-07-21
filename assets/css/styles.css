@@ -11,11 +11,15 @@ providing a space for you to apply styles to your app's outermost HTML element -
 #app {
   background-image: url("../img/clouds.jpg");
   background-size: cover;
-  overflow-y: scroll;
   color: yellow;
   font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
+  overflow-y: scroll;
+}
+
+.header {
+  padding: 3%;
 }
 
 #title {
@@ -45,11 +49,63 @@ providing a space for you to apply styles to your app's outermost HTML element -
   color: white;
 }
 
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+#new-tweet-form {
+  display: flex;
+  height: 20em;
+  width: 100%;
+
+}
+
+#friends-list {
+  display: flex;
+  flex-direction: column;
+  height: 20em;
+  width: 100%;
+  align-content: space-between;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 1em;
+  margin: 2%;
+  color: midnightblue;
+}
+
+#list {
+  font-family: 'Homer Simpson Revised', sans-serif;
+  font-size: xx-large;
+  text-align: center;
+  padding: 1%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  list-style-type: none;
+  padding: 1%;
+}
+
+.friend {
+  padding: 1%;
+
+}
+
 #feed {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
 
 .tweet {
@@ -58,7 +114,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
   border: solid;
   border-style: hidden;
   border-color: black;
-  width: 50%;
+  width: 90%;
   background-color: rgba(211, 211, 211, 0.8);
   color: midnightblue;
   flex-wrap: wrap;

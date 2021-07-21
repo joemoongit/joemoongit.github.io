@@ -2,16 +2,18 @@ $(document).ready(function() {
   var $app = $('#app');
   $app.html('');
 
+  var $header = $('<div class="header"></div>');
+  $header.appendTo($app);
+
   var $title = $('<h1 id="title">Twiddler</h1>');
-  $title.appendTo($app);
+  $title.appendTo($header);
   $title.on('click', function(event) {
-    console.log(event);
     alert('The title of this page is: ' + event.target.innerText);
   });
 
   var $updateButton = $('<button id="update-feed"></button>');
   $updateButton.text('Update Feed');
-  $updateButton.appendTo($app);
+  $updateButton.appendTo($header);
   $updateButton.on('click', function(event) {
  //   $feed.removeAttr(event.target.innerHTML);
     if ($updateButton.text() === 'Back') {
@@ -20,8 +22,40 @@ $(document).ready(function() {
     renderFeed();
   });
 
+  var $section = $('<div class="section"></div>');
+  $section.appendTo($app);
+
+  var $container = $('<div class="container"></div>');
+  $container.appendTo($section);
+
+  var $newTweetForm = $('<div id="new-tweet-form"></div>');
+  $newTweetForm.appendTo($container);
+
+  var $friendsList = $('<div id="friends-list"></div>');
+  $friendsList.appendTo($container);
+
+  var populateFriendsList = function() {
+    $header = $('<h2 id="list"></h2>');
+    $header.text('Friends List');
+    $header.appendTo($friendsList);
+    $list = $('<ul class="list"></ul>');
+    $list.appendTo($friendsList);
+
+    for (var user in streams.users) {
+      let u = user;
+      $friend = $('<li class="friend"></li>');
+      $friend.text(u);
+      $friend.appendTo($list);
+      $friend.on('click', function() {
+        renderFeed(u);
+      });
+    }
+  };
+
+  populateFriendsList();
+
   var $feed = $('<div id="feed"></div>');
-  $feed.appendTo($app);
+  $feed.appendTo($section);
 
   var elementGenerator = function(object) {
     var res = '<' + object.type;
@@ -56,6 +90,30 @@ $(document).ready(function() {
     }
     return $res;
   };
+
+  // var flexElementsFeed = {
+  //   'friends': {
+  //     'type': 'div',
+  //     'attributes': {
+  //       'id': 'friends-list'
+  //     }
+  //   },
+  //   'feed': {
+  //     'type': 'div',
+  //     'attributes': {
+  //       'id': 'feed'
+  //     }
+  //   }
+  // };
+
+  // var createLayout = function() {
+  //   var $friends_list = elementGenerator(flexElementsFeed.friends);
+  //   var $feed = elementGenerator(flexElementsFeed.feed);
+  //   $friends_list.appendTo($app);
+  //   $feed.appendTo($app);
+  // };
+
+  // createLayout();
 
   var flexElements = {
     'header': {
@@ -393,15 +451,15 @@ $(document).ready(function() {
         $component.text(jQuery.timeago(tweet[key]));
         $component.appendTo($footer)
       } else if (key === 'profilePhotoURL') {
-        if (tweet[key].includes('douglascalhoun')) {
-          $component = generateSimpsonsCharacter('homer', homer);
-        } else if (tweet[key].includes('sharksforcheap')) {
-          $component = generateSimpsonsCharacter('bart', bart);
-        } else if (tweet[key].includes('shawndrost')) {
-          $component = generateSimpsonsCharacter('lisa', lisa);
-        } else if (tweet[key].includes('mracus')) {
-          $component = generateSimpsonsCharacter('maggie', maggie);
-        }
+        // if (tweet[key].includes('douglascalhoun')) {
+        //   $component = generateSimpsonsCharacter('homer', homer);
+        // } else if (tweet[key].includes('sharksforcheap')) {
+        //   $component = generateSimpsonsCharacter('bart', bart);
+        // } else if (tweet[key].includes('shawndrost')) {
+        //   $component = generateSimpsonsCharacter('lisa', lisa);
+        // } else if (tweet[key].includes('mracus')) {
+        //   $component = generateSimpsonsCharacter('maggie', maggie);
+        // }
         $component.appendTo($header);
       } else {
         $component.text(tweet[key]);
@@ -446,4 +504,5 @@ $(document).ready(function() {
   };
 
   renderFeed();
+  window.isItBeautifulYet = true;
 });
