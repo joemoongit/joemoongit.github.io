@@ -58,17 +58,58 @@ providing a space for you to apply styles to your app's outermost HTML element -
 .container {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 35%;
 }
 
 #new-tweet-form {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   height: 20em;
   width: 100%;
+  border-radius: 1em;
+  margin: 2%;
+  color: midnightblue;
+  background-color: rgba(211, 211, 211, 0.8);
+}
+
+#new-tweet {
+  font-family: 'Homer Simpson Revised', sans-serif;
+  color: midnightblue;
+  font-size: xx-large;
+  padding: 1%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#new-tweet-user {
 
 }
 
-#friends-list {
+#user {
+  border-radius: 1em;
+}
+
+#new-tweet-message {
+
+}
+
+#m {
+  border-radius: 1em;
+}
+
+#new-tweet-wrapper {
+  text-align: center;
+}
+
+#new-tweet-button {
+  font-family: 'Homer Simpson Revised', sans-serif;
+  border-radius: 1em;
+  width: 40%;
+}
+
+#friends-list-entries {
   display: flex;
   flex-direction: column;
   height: 20em;
@@ -87,12 +128,13 @@ providing a space for you to apply styles to your app's outermost HTML element -
   padding: 1%;
 }
 
-.list {
+#friends-list {
   display: flex;
   flex-direction: column;
   text-align: center;
   list-style-type: none;
   padding: 1%;
+
 }
 
 .friend {
@@ -103,9 +145,8 @@ providing a space for you to apply styles to your app's outermost HTML element -
 #feed {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 65%;
 }
 
 .tweet {

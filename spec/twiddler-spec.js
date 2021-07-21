@@ -61,7 +61,7 @@ var sharedTests = {
       });
     });
   },
-  
+
   tweetsRenderInReverseChronologicalOrder: function() {
     it('displays Tweets in reverse chronological order (newest first)', function() {
       getNewestRenderedTweetIndex().then(function(firstTweetIndex) {
@@ -147,7 +147,7 @@ describe('Home Feed', function() {
   it('contains one element with a class of "tweet" for every Tweet', function() {
     cy.get('#feed .tweet').should('have.length', numberOfTweetsAtLastRender);
   });
-  
+
   sharedTests.tweetsRenderInReverseChronologicalOrder();
 
   describe('Update Feed button', function() {
@@ -173,7 +173,7 @@ describe('Home Feed', function() {
           expect(Cypress.$('.tweet').length).to.be.greaterThan(initialNumTweets);
         });
       });
-      
+
       sharedTests.noDuplicateTweetsRendered();
       sharedTests.tweetsRenderInReverseChronologicalOrder();
 
@@ -230,7 +230,7 @@ describe('Tweet UI Component', function() {
       expect($message).to.contain(tweet.message);
     }
   );
-  
+
   assertEveryTweet('contains a child with a class of "username"', '.tweet .username');
   assertEveryTweet(
     'contains the username, prefixed by "@", in the child with a class of "username"',
@@ -378,7 +378,7 @@ describe('User Feed', function() {
         expect($username.text()).to.eq(selectedUsername);
       });
     });
-  
+
     it('changes the "Update Feed" button into a "Back" button', function() {
       cy.get('#update-feed').contains('Back', { matchCase: false });
     });
@@ -452,7 +452,7 @@ describe('CSS Styling and Layout', function() {
 });
 
 if (!Cypress.env('SKIP_EXTRA_CREDIT')) {
-  xdescribe('Extra credit', function() {
+  describe('Extra credit', function() {
     describe('Friends list', function() {
       it('exists as a UL tag with an ID of "friends-list"', function() {
         cy.get('ul#friends-list').should('exist');
@@ -523,7 +523,7 @@ if (!Cypress.env('SKIP_EXTRA_CREDIT')) {
           submitButton = $form.find('button') || $form.find('input[type="submit"]');
           submitButton.click();
         });
-        
+
       });
 
       context('when submitted', function() {

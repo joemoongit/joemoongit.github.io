@@ -28,23 +28,62 @@ $(document).ready(function() {
   var $container = $('<div class="container"></div>');
   $container.appendTo($section);
 
-  var $newTweetForm = $('<div id="new-tweet-form"></div>');
+  var $newTweetForm = $(`<form id="new-tweet-form"></form>`);
   $newTweetForm.appendTo($container);
 
-  var $friendsList = $('<div id="friends-list"></div>');
+  var onclick = function() {
+
+  };
+
+  var newTweetForm = function() {
+    $header = $('<h2 id="new-tweet"></h2>');
+    $header.text('New Tweet');
+    $header.appendTo($newTweetForm);
+
+    $labelUser = $('<label id="new-tweet-user" for="user"></label>');
+    $labelUser.text('Username');
+    $inputUser = $('<input type="text" id="user" name="username" attribute="username">');
+
+    $labelTweet = $('<label id="new-tweet-message" for="m"></label>');
+    $labelTweet.text('Tweet');
+    $inputTweet = $('<input type="text" id="m" name="message" attribute="message">');
+
+    $labelUser.appendTo($newTweetForm);
+    $inputUser.appendTo($newTweetForm);
+    $labelTweet.appendTo($newTweetForm);
+    $inputTweet.appendTo($newTweetForm);
+
+    $buttonWrapper = $('<div id=new-tweet-wrapper></div>');
+    $button = $('<button id="new-tweet-button" type="button"></button>');
+    $button.text('Post');
+    $button.appendTo($buttonWrapper);
+    $buttonWrapper.appendTo($newTweetForm);
+    $button.on('click', function() {
+      writeTweet($inputTweet.val(), $inputUser.val());
+      renderFeed();
+      populateFriendsList();
+      $inputUser.val('');
+      $inputTweet.val('');
+    });
+  };
+
+  newTweetForm();
+
+  var $friendsList = $('<div id="friends-list-entries"></div>');
   $friendsList.appendTo($container);
 
   var populateFriendsList = function() {
+    $friendsList.empty();
     $header = $('<h2 id="list"></h2>');
     $header.text('Friends List');
     $header.appendTo($friendsList);
-    $list = $('<ul class="list"></ul>');
+    $list = $('<ul id="friends-list"></ul>');
     $list.appendTo($friendsList);
 
     for (var user in streams.users) {
       let u = user;
       $friend = $('<li class="friend"></li>');
-      $friend.text(u);
+      $friend.text(`@${u}`);
       $friend.appendTo($list);
       $friend.on('click', function() {
         renderFeed(u);
