@@ -433,7 +433,8 @@ $(document).ready(function() {
       'mouth1': 'no-border mouth-top',
       'mouth2': 'no-border mouth-left',
       'mouth3': 'no-border mouth-right',
-      'mouth4': 'no-border mouth-inner',
+      'mouth4': 'no-border mouth-bottom',
+      'mouth5': 'no-border mouth-inner',
       'tongue': 'no-border tongue',
       'moustache': {
         'moustache1': 'no-border moustache-hair1 hair left',
