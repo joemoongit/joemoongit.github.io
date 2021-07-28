@@ -15,7 +15,6 @@ $(document).ready(function() {
   $updateButton.text('Update Feed');
   $updateButton.appendTo($header);
   $updateButton.on('click', function(event) {
- //   $feed.removeAttr(event.target.innerHTML);
     if ($updateButton.text() === 'Back') {
       $updateButton.text('Update Feed');
     }
@@ -28,12 +27,8 @@ $(document).ready(function() {
   var $container = $('<div class="container"></div>');
   $container.appendTo($section);
 
-  var $newTweetForm = $(`<form id="new-tweet-form"></form>`);
+  var $newTweetForm = $(`<form id="new-tweet-form" method="post" type="submit"></form>`);
   $newTweetForm.appendTo($container);
-
-  var onclick = function() {
-
-  };
 
   var newTweetForm = function() {
     $header = $('<h2 id="new-tweet"></h2>');
@@ -42,11 +37,11 @@ $(document).ready(function() {
 
     $labelUser = $('<label id="new-tweet-user" for="user"></label>');
     $labelUser.text('Username');
-    $inputUser = $('<input type="text" id="user" name="username" attribute="username">');
+    $inputUser = $('<input type="text" id="user" name="username" attribute="username" placeholder="username" required>');
 
     $labelTweet = $('<label id="new-tweet-message" for="m"></label>');
     $labelTweet.text('Tweet');
-    $inputTweet = $('<input type="text" id="m" name="message" attribute="message">');
+    $inputTweet = $('<input type="text" id="m" name="message" attribute="message" placeholder="what\'s new?" required>');
 
     $labelUser.appendTo($newTweetForm);
     $inputUser.appendTo($newTweetForm);
@@ -54,12 +49,17 @@ $(document).ready(function() {
     $inputTweet.appendTo($newTweetForm);
 
     $buttonWrapper = $('<div id=new-tweet-wrapper></div>');
-    $button = $('<button id="new-tweet-button" type="button"></button>');
-    $button.text('Post');
-    $button.appendTo($buttonWrapper);
+    $submit = $('<button id="new-tweet-button" type="submit" value="Post"></button>');
+    $submit.text('Post');
+    $submit.appendTo($buttonWrapper);
     $buttonWrapper.appendTo($newTweetForm);
-    $button.on('click', function() {
-      writeTweet($inputTweet.val(), $inputUser.val());
+    $newTweetForm.submit(function(e) {
+      e.preventDefault();
+      console.log(e);
+
+      window.visitor = $inputUser.val();
+      writeTweet($inputTweet.val());
+
       renderFeed();
       populateFriendsList();
       $inputUser.val('');
@@ -80,7 +80,7 @@ $(document).ready(function() {
     $list = $('<ul id="friends-list"></ul>');
     $list.appendTo($friendsList);
 
-    for (var user in streams.users) {
+    for (var user in window.streams.users) {
       let u = user;
       $friend = $('<li class="friend"></li>');
       $friend.text(`@${u}`);
@@ -129,30 +129,6 @@ $(document).ready(function() {
     }
     return $res;
   };
-
-  // var flexElementsFeed = {
-  //   'friends': {
-  //     'type': 'div',
-  //     'attributes': {
-  //       'id': 'friends-list'
-  //     }
-  //   },
-  //   'feed': {
-  //     'type': 'div',
-  //     'attributes': {
-  //       'id': 'feed'
-  //     }
-  //   }
-  // };
-
-  // var createLayout = function() {
-  //   var $friends_list = elementGenerator(flexElementsFeed.friends);
-  //   var $feed = elementGenerator(flexElementsFeed.feed);
-  //   $friends_list.appendTo($app);
-  //   $feed.appendTo($app);
-  // };
-
-  // createLayout();
 
   var flexElements = {
     'header': {
@@ -529,14 +505,14 @@ $(document).ready(function() {
   var renderFeed = function(user) {
     $feed.empty();
     if (user === undefined) {
-      for (var i = 0; i < streams.home.length; i++) {
-        addTweet(streams.home[i]);
+      for (var i = 0; i < window.streams.home.length; i++) {
+        addTweet(window.streams.home[i]);
       }
     } else {
       $updateButton.text('Back');
-      for (var i = 0; i < streams.home.length; i++) {
-        if (streams.home[i]['user'] === user) {
-          addTweet(streams.home[i]);
+      for (var i = 0; i < window.streams.home.length; i++) {
+        if (window.streams.home[i]['user'] === user) {
+          addTweet(window.streams.home[i]);
         }
       }
     }

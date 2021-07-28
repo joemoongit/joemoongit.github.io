@@ -104,9 +104,11 @@ providing a space for you to apply styles to your app's outermost HTML element -
 }
 
 #new-tweet-button {
+  display: inline-block;
   font-family: 'Homer Simpson Revised', sans-serif;
   border-radius: 1em;
   width: 40%;
+  height: 100%;
 }
 
 #friends-list-entries {
