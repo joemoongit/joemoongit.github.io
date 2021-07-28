@@ -397,6 +397,56 @@ $(document).ready(function() {
     }
   };
 
+  var ned = {
+    'head': {
+      'hair1': 'hair-top hair',
+      'hair2': 'hair-side hair',
+      'neck1': 'no-border neck-bottom',
+      'neck2': 'no-border neck-left',
+      'lip': 'body lip',
+      'main': 'no-border body head-main',
+      'hair3': 'no-border hair-line1 hair-line',
+      'hair4': 'no-border hair-line2 hair-line',
+      'hair5': 'no-border hair-line3 hair-line',
+      'hair6': 'no-border hair-line4 hair-line',
+      'hair7': 'no-border hair-line5 hair-line',
+      'hair8': 'body head-top',
+      'hair9': 'no-border body eye-bulge',
+      'hair10': 'no-border body head-top-inner',
+      'neck3': 'no-border neck-right',
+      'ear': {
+        'ear1': 'no-border inner'
+      },
+      'hair11': 'no-border sideburn hair',
+      'hair12': 'no-border body head-side',
+      'left-eye': {
+        'left-eye1': 'no-border pupil',
+        'left-eye2': 'no-border body eyelid-top',
+        'left-eye3': 'no-border body eyelid-bottom'
+      },
+      'right-eye': {
+        'right-eye1': 'no-border pupil',
+        'right-eye2': 'no-border body eyelid-top',
+        'right-eye3': 'no-border body eyelid-bottom'
+      },
+      'glasses': 'no-border glasses',
+      'mouth1': 'no-border mouth-top',
+      'mouth2': 'no-border mouth-left',
+      'mouth3': 'no-border mouth-right',
+      'mouth4': 'no-border mouth-inner',
+      'tongue': 'no-border tongue',
+      'moustache': {
+        'moustache1': 'no-border moustache-hair1 hair left',
+        'moustache2': 'no-border moustache-hair2 hair left',
+        'moustache3': 'no-border moustache-hair3 hair left',
+        'moustache4': 'no-border moustache-hair4 hair right',
+        'moustache5': 'no-border moustache-hair5 hair right',
+        'moustache6': 'no-border moustache-hair6 hair right'
+      },
+      'nose': 'body nose'
+    }
+  };
+
   var elementGenerator2 = function(element, attributes) {
     var attr = '';
     for (var key in attributes) {
@@ -419,6 +469,8 @@ $(document).ready(function() {
           $part = elementGenerator2('div', {'class': `circle body ${key}`})
         } else if (name === 'maggie' && (key === 'left-eye' || key === 'right-eye')) {
           $part = elementGenerator2('div', {'class': `circle eye ${key}`})
+        } else if (name === 'ned-flanders' && (key === 'left-eye' || key === 'right-eye')) {
+          $part = elementGenerator2('div', {'class': `${key} eye`})
         } else {
           $part = elementGenerator2('div', {'class': key})
         }
@@ -466,15 +518,17 @@ $(document).ready(function() {
         $component.text(jQuery.timeago(tweet[key]));
         $component.appendTo($footer)
       } else if (key === 'profilePhotoURL') {
-        // if (tweet[key].includes('douglascalhoun')) {
-        //   $component = generateSimpsonsCharacter('homer', homer);
-        // } else if (tweet[key].includes('sharksforcheap')) {
-        //   $component = generateSimpsonsCharacter('bart', bart);
-        // } else if (tweet[key].includes('shawndrost')) {
-        //   $component = generateSimpsonsCharacter('lisa', lisa);
-        // } else if (tweet[key].includes('mracus')) {
-        //   $component = generateSimpsonsCharacter('maggie', maggie);
-        // }
+        if (tweet[key].includes('douglascalhoun')) {
+          $component = generateSimpsonsCharacter('homer', homer);
+        } else if (tweet[key].includes('sharksforcheap')) {
+          $component = generateSimpsonsCharacter('bart', bart);
+        } else if (tweet[key].includes('shawndrost')) {
+          $component = generateSimpsonsCharacter('lisa', lisa);
+        } else if (tweet[key].includes('mracus')) {
+          $component = generateSimpsonsCharacter('maggie', maggie);
+        } else if (user === visitor) {
+          $component = generateSimpsonsCharacter('ned-flanders', ned);
+        }
         $component.appendTo($header);
       } else {
         $component.text(tweet[key]);
