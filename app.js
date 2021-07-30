@@ -565,11 +565,8 @@ $(document).ready(function() {
       }
     } else {
       $updateButton.text('Back');
-      for (var i = 0; i < window.streams.home.length; i++) {
-        if (window.streams.home[i]['user'] === user) {
-          addTweet(window.streams.home[i]);
-        }
-      }
+      console.log(window.streams.home.filter(elem => elem.user === 'mracus'));
+      window.streams.home.filter(tweet => tweet.user === user).forEach(tweet => addTweet(tweet));
     }
   };
 
