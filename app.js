@@ -519,6 +519,7 @@ $(document).ready(function() {
         $component.text(jQuery.timeago(tweet[key]));
         $component.appendTo($footer)
       } else if (key === 'profilePhotoURL') {
+        // generate animated simpsons css objects
         if (tweet[key].includes('douglascalhoun')) {
           $component = generateSimpsonsCharacter('homer', homer);
         } else if (tweet[key].includes('sharksforcheap')) {
