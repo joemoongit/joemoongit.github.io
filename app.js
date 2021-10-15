@@ -208,245 +208,243 @@ $(document).ready(function() {
     }
   };
 
-  var homer = {
-    'head' : {
-      'hair1': 'hair1',
-      'hair2': 'hair2',
-      'hair3': 'body head-top',
-      'hair4': 'no-border body head-main',
-      'hair5': 'no-border m1',
-      'hair6': 'no-border m2',
-      'hair7': 'no-border m3',
-      'hair8': 'no-border m4',
-      'neck1': 'no-border neck1',
-      'neck2': 'body neck2',
-      'ear': {
-        'ear1': 'no-border inner1',
-        'ear2': 'no-border inner2',
-        'ear3': 'no-border body clip'
-      },
-      'mouth': {
-        'mouth1': 'mouth5',
-        'mouth2': 'mouth2',
-        'mouth3': 'mouth1',
-        'mouth4': 'mouth7',
-        'mouth5': 'no-border mouth3',
-        'mouth6': 'no-border mouth4',
-        'mouth7': 'no-border mouth6',
-        'mouth8': 'no-border mouth8'
-      },
-      'right-eye': {
-        'right-eye1': 'no-border right-eye-pupil',
-        'right-eye2': 'no-border body eyelid-top',
-        'right-eye3': 'no-border body eyelid-bottom'
-      },
-      'nose1': 'body nose',
-      'nose2': 'body nose-tip',
-      'left-eye': {
-        'left-eye1': 'no-border left-eye-pupil',
-        'left-eye2': 'no-border body eyelid-top',
-        'left-eye3': 'no-border body eyelid-bottom'
+  var characters = {
+    homer: {
+      'head' : {
+        'hair1': 'hair1',
+        'hair2': 'hair2',
+        'hair3': 'body head-top',
+        'hair4': 'no-border body head-main',
+        'hair5': 'no-border m1',
+        'hair6': 'no-border m2',
+        'hair7': 'no-border m3',
+        'hair8': 'no-border m4',
+        'neck1': 'no-border neck1',
+        'neck2': 'body neck2',
+        'ear': {
+          'ear1': 'no-border inner1',
+          'ear2': 'no-border inner2',
+          'ear3': 'no-border body clip'
+        },
+        'mouth': {
+          'mouth1': 'mouth5',
+          'mouth2': 'mouth2',
+          'mouth3': 'mouth1',
+          'mouth4': 'mouth7',
+          'mouth5': 'no-border mouth3',
+          'mouth6': 'no-border mouth4',
+          'mouth7': 'no-border mouth6',
+          'mouth8': 'no-border mouth8'
+        },
+        'right-eye': {
+          'right-eye1': 'no-border right-eye-pupil',
+          'right-eye2': 'no-border body eyelid-top',
+          'right-eye3': 'no-border body eyelid-bottom'
+        },
+        'nose1': 'body nose',
+        'nose2': 'body nose-tip',
+        'left-eye': {
+          'left-eye1': 'no-border left-eye-pupil',
+          'left-eye2': 'no-border body eyelid-top',
+          'left-eye3': 'no-border body eyelid-bottom'
+        }
       }
-    }
-  };
-
-  var bart = {
-    'head': {
-      'hair1': 'no-border body hair hair1',
-      'hair2': 'no-border body hair hair2',
-      'hair3': 'no-border body hair hair3',
-      'hair4': 'no-border body hair hair4',
-      'hair5': 'no-border body hair hair5',
-      'hair6': 'no-border body hair hair6',
-      'hair7': 'no-border body hair hair7',
-      'hair8': 'no-border body hair hair8',
-      'hair9': 'no-border body hair hair9',
-      'mouth': 'body mouth-lip2',
-      'left1': 'no-border body head-left1',
-      'left2': 'no-border body head-left2',
-      'left3': 'no-border body head-left3',
-      'left4': 'no-border body head-left4',
-      'left5': 'no-border body head-left5',
-      'left6': 'no-border body head-left6',
-      'left7': 'no-border body head-left7',
-      'eyelid': 'body eyelid',
-      'mouth2':'no-border body mouth',
-      'lip': 'body mouth-lip',
-      'right1': 'no-border body head-right1',
-      'right2': 'no-border body head-right2',
-      'right3': 'no-border body head-right3',
-      'ear' : {
-        'ear1': 'no-border inner1',
-        'ear2': 'no-border inner2',
-        'ear3': 'no-border body clip'
-      },
-      'right-eye': {
-        'right-eye1': 'no-border right-eye-pupil',
-        'right-eye2': 'no-border body eyelid-top',
-        'right-eye3': 'no-border body eyelid-bottom'
-      },
-      'nose1': 'no-border body nose',
-      'nose2': 'body nose-tip',
-      'left-eye': {
-        'left-eye1': 'no-border left-eye-pupil',
-        'left-eye2': 'no-border body eyelid-top',
-        'left-eye3': 'no-border body eyelid-bottom'
-      },
-      'smile': 'no-border mouth-smile'
-    }
-  };
-
-  var lisa = {
-    'head': {
-      'head1': 'no-border body head-main',
-      'head2': 'no-border body head-main2',
-      'head3': 'no-border body head-main3',
-      'hair9': 'no-border hair9',
-      'hair10': 'no-border hair10',
-      'hair1': 'body hair hair1',
-      'hair2': 'body hair hair2',
-      'hair3': 'body hair hair3',
-      'hair4': 'body hair hair4',
-      'hair5': 'body hair hair5',
-      'hair6': 'body hair hair6',
-      'hair7': 'body hair hair7',
-      'hair8': 'body hair hair8',
-      'lip2': 'body mouth-lip2',
-      'lip': 'body mouth-lip',
-      'neck1': 'no-border body neck',
-      'mouth': 'no-border body mouth',
-      'neck2': 'no-border body neck2',
-      'neck3': 'no-border body neck3',
-      'smile': 'no-border mouth-smile',
-      'ear': {
-        'ear1': 'no-border inner1',
-        'ear2': 'no-border inner2',
-        'ear3': 'no-border body clip'
-      },
-      'eyelash1': 'no-border eyelash1 eyelash',
-      'eyelash2': 'no-border eyelash2 eyelash',
-      'eyelash3': 'no-border eyelash3 eyelash',
-      'eyelash4': 'no-border eyelash4 eyelash',
-      'eyelash5': 'no-border eyelash5 eyelash',
-      'eyelash6': 'no-border eyelash6 eyelash',
-      'eyelash7': 'no-border eyelash7 eyelash',
-      'eyelash8': 'no-border eyelash8 eyelash',
-      'right-eye': {
-        'right-eye1': 'no-border right-eye-pupil',
-        'right-eye2': 'no-border body eyelid-top',
-        'right-eye3': 'no-border body eyelid-bottom'
-      },
-      'nose1': 'no-border body nose',
-      'nose2': 'body nose-tip',
-      'left-eye': {
-        'left-eye1': 'no-border left-eye-pupil',
-        'left-eye2': 'no-border body eyelid-top',
-        'left-eye3': 'no-border body eyelid-bottom'
-      },
-      'necklace1': 'necklace necklace1',
-      'necklace2': 'necklace necklace2',
-      'necklace3': 'necklace necklace3',
-      'necklace5': 'necklace necklace5',
-      'necklace4': 'necklace necklace4'
-    }
-  };
-
-  var maggie = {
-    'head': {
-      'main': 'no-border body head-main',
-      'hair2': 'body hair hair2',
-      'hair1': 'body hair hair1',
-      'hair3': 'body hair hair3',
-      'hair4': 'body hair hair4',
-      'hair5': 'body hair hair5',
-      'hair6': 'body hair hair6',
-      'hair7': 'body hair hair7',
-      'hair8': 'body hair hair8',
-      'bow': 'bow bow1',
-      'bow2': 'circle bow bow2',
-      'bow3': 'bow bow3',
-      'neck': 'no-border body neck',
-      'ear': {
-        'ear1': 'no-border circle inner1',
-        'ear2': 'no-border circle inner2',
-        'ear3': 'no-border body clip'
-      },
-      'cheek': 'circle body cheek',
-      'eyelash1': 'no-border eyelash1 eyelash',
-      'eyelash2': 'no-border eyelash2 eyelash',
-      'eyelash3': 'no-border eyelash3 eyelash',
-      'eyelash4': 'no-border eyelash4 eyelash',
-      'eyelash5': 'no-border eyelash5 eyelash',
-      'eyelash6': 'no-border eyelash6 eyelash',
-      'eyelash7': 'no-border eyelash7 eyelash',
-      'eyelash8': 'no-border eyelash8 eyelash',
-      'right-eye': {
-        'right-eye1': 'no-border circle pupil',
-        'right-eye2': 'no-border body eyelid-top',
-        'right-eye3': 'no-border body eyelid-bottom'
-      },
-      'nose': 'body nose-tip',
-      'left-eye': {
-        'left-eye1': 'no-border circle pupil',
-        'left-eye2': 'no-border body eyelid-top',
-        'left-eye3': 'no-border body eyelid-bottom'
-      },
-      'mouth': 'circle body mouth',
-      'dummy1': 'circle dummy dummy1',
-      'dummy2': 'dummy dummy3'
-    }
-  };
-
-  var ned = {
-    'head': {
-      'hair1': 'hair-top hair',
-      'hair2': 'hair-side hair',
-      'neck1': 'no-border neck-bottom',
-      'neck2': 'no-border neck-left',
-      'lip': 'body lip',
-      'main': 'no-border body head-main',
-      'hair3': 'no-border hair-line1 hair-line',
-      'hair4': 'no-border hair-line2 hair-line',
-      'hair5': 'no-border hair-line3 hair-line',
-      'hair6': 'no-border hair-line4 hair-line',
-      'hair7': 'no-border hair-line5 hair-line',
-      'hair8': 'body head-top',
-      'hair9': 'no-border body eye-bulge',
-      'hair10': 'no-border body head-top-inner',
-      'neck3': 'no-border neck-right',
-      'ear': {
-        'ear1': 'no-border inner'
-      },
-      'hair11': 'no-border sideburn hair',
-      'hair12': 'no-border body head-side',
-      'left-eye': {
-        'left-eye1': 'no-border pupil',
-        'left-eye2': 'no-border body eyelid-top',
-        'left-eye3': 'no-border body eyelid-bottom'
-      },
-      'right-eye': {
-        'right-eye1': 'no-border pupil',
-        'right-eye2': 'no-border body eyelid-top',
-        'right-eye3': 'no-border body eyelid-bottom'
-      },
-      'glasses': 'no-border glasses',
-      'mouth1': 'no-border mouth-top',
-      'mouth2': 'no-border mouth-left',
-      'mouth3': 'no-border mouth-right',
-      'mouth4': 'no-border mouth-bottom',
-      'mouth5': 'no-border mouth-inner',
-      'tongue': 'no-border tongue',
-      'moustache': {
-        'moustache1': 'no-border moustache-hair1 hair left',
-        'moustache2': 'no-border moustache-hair2 hair left',
-        'moustache3': 'no-border moustache-hair3 hair left',
-        'moustache4': 'no-border moustache-hair4 hair right',
-        'moustache5': 'no-border moustache-hair5 hair right',
-        'moustache6': 'no-border moustache-hair6 hair right'
-      },
-      'nose': 'body nose'
-    }
-  };
+    },
+    bart: {
+      'head': {
+        'hair1': 'no-border body hair hair1',
+        'hair2': 'no-border body hair hair2',
+        'hair3': 'no-border body hair hair3',
+        'hair4': 'no-border body hair hair4',
+        'hair5': 'no-border body hair hair5',
+        'hair6': 'no-border body hair hair6',
+        'hair7': 'no-border body hair hair7',
+        'hair8': 'no-border body hair hair8',
+        'hair9': 'no-border body hair hair9',
+        'mouth': 'body mouth-lip2',
+        'left1': 'no-border body head-left1',
+        'left2': 'no-border body head-left2',
+        'left3': 'no-border body head-left3',
+        'left4': 'no-border body head-left4',
+        'left5': 'no-border body head-left5',
+        'left6': 'no-border body head-left6',
+        'left7': 'no-border body head-left7',
+        'eyelid': 'body eyelid',
+        'mouth2':'no-border body mouth',
+        'lip': 'body mouth-lip',
+        'right1': 'no-border body head-right1',
+        'right2': 'no-border body head-right2',
+        'right3': 'no-border body head-right3',
+        'ear' : {
+          'ear1': 'no-border inner1',
+          'ear2': 'no-border inner2',
+          'ear3': 'no-border body clip'
+        },
+        'right-eye': {
+          'right-eye1': 'no-border right-eye-pupil',
+          'right-eye2': 'no-border body eyelid-top',
+          'right-eye3': 'no-border body eyelid-bottom'
+        },
+        'nose1': 'no-border body nose',
+        'nose2': 'body nose-tip',
+        'left-eye': {
+          'left-eye1': 'no-border left-eye-pupil',
+          'left-eye2': 'no-border body eyelid-top',
+          'left-eye3': 'no-border body eyelid-bottom'
+        },
+        'smile': 'no-border mouth-smile'
+      }
+    },
+    lisa: {
+      'head': {
+        'head1': 'no-border body head-main',
+        'head2': 'no-border body head-main2',
+        'head3': 'no-border body head-main3',
+        'hair9': 'no-border hair9',
+        'hair10': 'no-border hair10',
+        'hair1': 'body hair hair1',
+        'hair2': 'body hair hair2',
+        'hair3': 'body hair hair3',
+        'hair4': 'body hair hair4',
+        'hair5': 'body hair hair5',
+        'hair6': 'body hair hair6',
+        'hair7': 'body hair hair7',
+        'hair8': 'body hair hair8',
+        'lip2': 'body mouth-lip2',
+        'lip': 'body mouth-lip',
+        'neck1': 'no-border body neck',
+        'mouth': 'no-border body mouth',
+        'neck2': 'no-border body neck2',
+        'neck3': 'no-border body neck3',
+        'smile': 'no-border mouth-smile',
+        'ear': {
+          'ear1': 'no-border inner1',
+          'ear2': 'no-border inner2',
+          'ear3': 'no-border body clip'
+        },
+        'eyelash1': 'no-border eyelash1 eyelash',
+        'eyelash2': 'no-border eyelash2 eyelash',
+        'eyelash3': 'no-border eyelash3 eyelash',
+        'eyelash4': 'no-border eyelash4 eyelash',
+        'eyelash5': 'no-border eyelash5 eyelash',
+        'eyelash6': 'no-border eyelash6 eyelash',
+        'eyelash7': 'no-border eyelash7 eyelash',
+        'eyelash8': 'no-border eyelash8 eyelash',
+        'right-eye': {
+          'right-eye1': 'no-border right-eye-pupil',
+          'right-eye2': 'no-border body eyelid-top',
+          'right-eye3': 'no-border body eyelid-bottom'
+        },
+        'nose1': 'no-border body nose',
+        'nose2': 'body nose-tip',
+        'left-eye': {
+          'left-eye1': 'no-border left-eye-pupil',
+          'left-eye2': 'no-border body eyelid-top',
+          'left-eye3': 'no-border body eyelid-bottom'
+        },
+        'necklace1': 'necklace necklace1',
+        'necklace2': 'necklace necklace2',
+        'necklace3': 'necklace necklace3',
+        'necklace5': 'necklace necklace5',
+        'necklace4': 'necklace necklace4'
+      }
+    },
+    maggie: {
+      'head': {
+        'main': 'no-border body head-main',
+        'hair2': 'body hair hair2',
+        'hair1': 'body hair hair1',
+        'hair3': 'body hair hair3',
+        'hair4': 'body hair hair4',
+        'hair5': 'body hair hair5',
+        'hair6': 'body hair hair6',
+        'hair7': 'body hair hair7',
+        'hair8': 'body hair hair8',
+        'bow': 'bow bow1',
+        'bow2': 'circle bow bow2',
+        'bow3': 'bow bow3',
+        'neck': 'no-border body neck',
+        'ear': {
+          'ear1': 'no-border circle inner1',
+          'ear2': 'no-border circle inner2',
+          'ear3': 'no-border body clip'
+        },
+        'cheek': 'circle body cheek',
+        'eyelash1': 'no-border eyelash1 eyelash',
+        'eyelash2': 'no-border eyelash2 eyelash',
+        'eyelash3': 'no-border eyelash3 eyelash',
+        'eyelash4': 'no-border eyelash4 eyelash',
+        'eyelash5': 'no-border eyelash5 eyelash',
+        'eyelash6': 'no-border eyelash6 eyelash',
+        'eyelash7': 'no-border eyelash7 eyelash',
+        'eyelash8': 'no-border eyelash8 eyelash',
+        'right-eye': {
+          'right-eye1': 'no-border circle pupil',
+          'right-eye2': 'no-border body eyelid-top',
+          'right-eye3': 'no-border body eyelid-bottom'
+        },
+        'nose': 'body nose-tip',
+        'left-eye': {
+          'left-eye1': 'no-border circle pupil',
+          'left-eye2': 'no-border body eyelid-top',
+          'left-eye3': 'no-border body eyelid-bottom'
+        },
+        'mouth': 'circle body mouth',
+        'dummy1': 'circle dummy dummy1',
+        'dummy2': 'dummy dummy3'
+      }
+    },
+    ned: {
+      'head': {
+        'hair1': 'hair-top hair',
+        'hair2': 'hair-side hair',
+        'neck1': 'no-border neck-bottom',
+        'neck2': 'no-border neck-left',
+        'lip': 'body lip',
+        'main': 'no-border body head-main',
+        'hair3': 'no-border hair-line1 hair-line',
+        'hair4': 'no-border hair-line2 hair-line',
+        'hair5': 'no-border hair-line3 hair-line',
+        'hair6': 'no-border hair-line4 hair-line',
+        'hair7': 'no-border hair-line5 hair-line',
+        'hair8': 'body head-top',
+        'hair9': 'no-border body eye-bulge',
+        'hair10': 'no-border body head-top-inner',
+        'neck3': 'no-border neck-right',
+        'ear': {
+          'ear1': 'no-border inner'
+        },
+        'hair11': 'no-border sideburn hair',
+        'hair12': 'no-border body head-side',
+        'left-eye': {
+          'left-eye1': 'no-border pupil',
+          'left-eye2': 'no-border body eyelid-top',
+          'left-eye3': 'no-border body eyelid-bottom'
+        },
+        'right-eye': {
+          'right-eye1': 'no-border pupil',
+          'right-eye2': 'no-border body eyelid-top',
+          'right-eye3': 'no-border body eyelid-bottom'
+        },
+        'glasses': 'no-border glasses',
+        'mouth1': 'no-border mouth-top',
+        'mouth2': 'no-border mouth-left',
+        'mouth3': 'no-border mouth-right',
+        'mouth4': 'no-border mouth-bottom',
+        'mouth5': 'no-border mouth-inner',
+        'tongue': 'no-border tongue',
+        'moustache': {
+          'moustache1': 'no-border moustache-hair1 hair left',
+          'moustache2': 'no-border moustache-hair2 hair left',
+          'moustache3': 'no-border moustache-hair3 hair left',
+          'moustache4': 'no-border moustache-hair4 hair right',
+          'moustache5': 'no-border moustache-hair5 hair right',
+          'moustache6': 'no-border moustache-hair6 hair right'
+        },
+        'nose': 'body nose'
+      }
+    },
+  }
 
   var elementGenerator2 = function(element, attributes) {
     var attr = '';
@@ -520,16 +518,10 @@ $(document).ready(function() {
         $component.appendTo($footer)
       } else if (key === 'profilePhotoURL') {
         // generate animated simpsons css objects
-        if (tweet[key].includes('douglascalhoun')) {
-          $component = generateSimpsonsCharacter('homer', homer);
-        } else if (tweet[key].includes('sharksforcheap')) {
-          $component = generateSimpsonsCharacter('bart', bart);
-        } else if (tweet[key].includes('shawndrost')) {
-          $component = generateSimpsonsCharacter('lisa', lisa);
-        } else if (tweet[key].includes('mracus')) {
-          $component = generateSimpsonsCharacter('maggie', maggie);
-        } else if (user === visitor) {
-          $component = generateSimpsonsCharacter('ned-flanders', ned);
+        if (user === window.visitor || !['homer', 'bart', 'maggie', 'lisa'].includes(user)) {
+          $component = generateSimpsonsCharacter('ned-flanders', characters.ned);
+        } else {
+          $component = generateSimpsonsCharacter(user, characters[user])
         }
         $component.appendTo($header);
       } else {
@@ -566,7 +558,6 @@ $(document).ready(function() {
       }
     } else {
       $updateButton.text('Back');
-      console.log(window.streams.home.filter(elem => elem.user === 'mracus'));
       window.streams.home.filter(tweet => tweet.user === user).forEach(tweet => addTweet(tweet));
     }
   };
