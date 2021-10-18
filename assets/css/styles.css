@@ -121,6 +121,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
   border-radius: 1em;
   margin: 2%;
   color: midnightblue;
+  overflow-y: scroll;
 }
 
 #list {
