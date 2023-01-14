@@ -28,6 +28,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
   color: yellow;
   font-size: 6em;
   font-family: 'Homer Simpson Revised', sans-serif;
+  cursor: pointer;
 }
 
 #update-feed {
@@ -42,6 +43,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
   background-color: white;
   border: 0.08em solid gray;
   border-radius: 10em;
+  cursor: pointer;
 }
 
 #update-feed:hover {
@@ -109,6 +111,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
   border-radius: 1em;
   width: 40%;
   height: 100%;
+  cursor: pointer;
 }
 
 #friends-list-entries {
@@ -142,7 +145,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
 
 .friend {
   padding: 1%;
-
+  cursor: pointer;
 }
 
 #feed {
@@ -186,6 +189,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
 
 .username {
   padding-left: 1%;
+  cursor: pointer;
 }
 
 .tweet-section {
@@ -208,6 +212,7 @@ providing a space for you to apply styles to your app's outermost HTML element -
 
 .icon {
   margin-left: auto;
+  cursor: pointer;
 }
 
 .icon:hover {
